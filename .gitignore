@@ -1,7 +1,8 @@
 /.requirements.txt.kate-swp
-/CartoonSegmentation/
 /.idea/ComfyUI_CartoonSegmentation.iml
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/inspectionProfiles/profiles_settings.xml
 /.idea/vcs.xml
+/CartoonSegmentation/models/
+/CartoonSegmentation/models/AnimeInstanceSegmentation/
