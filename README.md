@@ -7,7 +7,7 @@ Based upon the work of the [CartoonSegmentation]([https://github.com/CartoonSegm
 This will create segmentations for an input image.  An example of final anime segmentation result is [workflows and outputs](examples/workflows_and_outputs/ani_seg_standing_rain.png) folder.  The image source used is in the [[examples/source_image/standing_in_rain.png]]
 
 ## Run 3d Kenburns
-This will create a short video of a zoom in and out from a single image.  There are two finished output examples show in the [[examples/workflows_and_outputs/]] folder based on the images warrior and warrior_blue in the [example source image](examples/source_image/) folder.
+This will create a short video of a zoom in and out from a single image.  There are two finished output examples show in the [[examples/workflows_and_outputs/]] folder based on the images warrior and warrior_blue in the [example source image](examples/source_image/) folder.  This workflow includes a required image creation at the end of workflow to pass ComfyUI validation.  The image is a screenshot from the half way through the video. 
 
 ## Install
 ### Initial Setup
@@ -33,7 +33,7 @@ Follow the [instructions](https://github.com/CartoonSegmentation/CartoonSegmenta
 ```bash
 # The ckpt files should be in the directory [comfy_root]/custom_nodes/ComfyUI_CartoonSegmentation/CartoonSegmentation/models/AnimeInstanceSegmentation
 cd custom_nodes/ComfyUI_CartoonSegmentation/CartoonSegmentation
-# Follow the instructinos from CartoonSegmentation repository
+# Follow the instructions from CartoonSegmentation repository
 ```
 
 #### res101.pth
