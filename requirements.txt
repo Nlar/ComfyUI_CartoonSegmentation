@@ -1,0 +1,29 @@
+torch==2.1.1 --index-url https://download.pytorch.org/whl/cu118
+torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu118
+torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
+mmcv==2.1.0
+omegaconf
+pydensecrf @ git+https://github.com/lucasb-eyer/pydensecrf.git
+numba
+wheel==0.42.0
+cupy==12.3.0
+mmdet
+imageio
+pandas
+onnxruntime
+pytorch_lightning
+moviepy
+gomp
+panopticapi @ git+https://github.com/cocodataset/panopticapi.git
+albumentations==1.1.0
+imgaug
+basicsr
+## Comfy Requirements
+safetensors
+psutil
+einops
+transformers
+scipy
+torchsde
+## Comfy Note to use requirment.txt
+aiohttp
