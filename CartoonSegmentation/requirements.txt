@@ -1,0 +1,18 @@
+git+https://github.com/lucasb-eyer/pydensecrf.git
+einops
+imageio
+git+https://github.com/cocodataset/panopticapi.git
+onnxruntime-gpu
+pytorch-lightning
+albumentations
+huggingface_hub
+omegaconf
+diffusers
+basicsr
+
+# ?Pending
+flask
+h5py
+
+# For Web UI
+gradio
