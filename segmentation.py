@@ -154,7 +154,7 @@ class KenBurns_Processor:
             for ii, mask in enumerate(kcfg.stage_inpainted_masks):
                 cv2.imwrite(f'tmp_stage_inpaint_mask_{ii}.png', mask)
 
-        npyframes2video(npy_frame_list, output_video_name)
+        npyframes2video(npy_frame_list, video_path_output)
         np_arry_sample = npy_frame_list[int(len(npy_frame_list) / 2)]
 
         img = nparray_to_image(np_arry_sample)
