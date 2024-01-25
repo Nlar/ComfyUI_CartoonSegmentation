@@ -13,13 +13,13 @@ def get_func(func_name):
         return None
     try:
         import folder_paths
-        depth_leres = folder_paths.folder_names_and_paths['cartoon_segmentation']['depth_leres']
+        depth_leres = folder_paths.folder_names_and_paths['cartoon_segmentation']['depth_modules']
         parts = func_name.split('.')
         # Refers to a function in this module
         if len(parts) == 1:
             return globals()[parts[0]]
         # Otherwise, assume we're referencing a module under modeling
-        module_name = f'{depth_leres}.leres.' + '.'.join(parts[:-1])
+        module_name = f'{depth_leres}.leres.leres.' + '.'.join(parts[:-1])
         module = importlib.import_module(module_name)
         return getattr(module, parts[-1])
     except Exception:
