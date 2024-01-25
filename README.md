@@ -1,7 +1,7 @@
 # ComfyUI_CartoonSegmentation
 
 Front end ComfyUI nodes for CartoonSegmentation
-Based upon the work of the [CartoonSegmentation](https://github.com/CartoonSegmentation/CartoonSegmentation) repository this project will provide a front end to some of the features.  For notation purposes this project will be referred to as ComfyUI_CartoonSegmentation of briefly as "CfyCS" and the non UI code that provides the power to this project will be referred to as "CartoonSegmentation". 
+based upon the work of the [CartoonSegmentation](https://github.com/CartoonSegmentation/CartoonSegmentation) repository this project will provide a front end to some of the features.  For notation purposes this project will be referred to as ComfyUI_CartoonSegmentation of briefly as "CfyCS" and the non UI code that provides the power to this project will be referred to as "CartoonSegmentation". 
 
 ## Run Segmentation
 This will create segmentations for an input image.  An example of final anime segmentation result is [workflows and outputs](examples/workflows_and_outputs/ani_seg_standing_rain.png) folder.  The image source used is in the [[examples/source_image/standing_in_rain.png]]
