@@ -14,11 +14,13 @@ def add_search_paths():
 
     # custom_nodes folder is an array.  This code assumes that there be only one instance
     custom_node_folder = custom_nodes_folders[0].rstrip("/").rstrip("\\")
+    # Do Not Add to Lookups.  Force custom keys as way of tracking unique loads/calls
     cartoon_segmentation_root = f"{custom_node_folder}/ComfyUI_CartoonSegmentation/CartoonSegmentation"
     cartoon_seg_config_path = f"{cartoon_segmentation_root}/configs"
     model_path_ani_inst_ckpt = f"{cartoon_segmentation_root}/models/AnimeInstanceSegmentation"
-    model_path_ani_seg_ckpt = f"{cartoon_segmentation_root}/models/anime-seg"
+    # model_path_ani_seg_ckpt = f"{cartoon_segmentation_root}/models/anime-seg"
     leres_path = f"{cartoon_segmentation_root}/models/leres"
+    depth_modules_path = f"{cartoon_segmentation_root}/depth_modules"
 
     if "cartoon_segmentation" not in folder_paths.folder_names_and_paths:
         folder_paths.folder_names_and_paths["cartoon_segmentation"] = cartoon_seg_folders
@@ -47,19 +49,23 @@ def add_search_paths():
         # Add Models to the sys.path.  A call to Config.loadString in AnimeInsSeg external lib mmengine needs help
         sys.path.append(model_path_ani_inst_ckpt)
 
-    if not check_report_path(model_path_ani_seg_ckpt, "Cartoon Segmentation anime-seg checkpoints"):
-        cartoon_seg_folders["anime_seg_checkpoints"] = model_path_ani_seg_ckpt
+    # if not check_report_path(model_path_ani_seg_ckpt, "Cartoon Segmentation anime-seg checkpoints"):
+    #     cartoon_seg_folders["anime_seg_checkpoints"] = model_path_ani_seg_ckpt
+
+
+    def directory_path_to_module_path(directory_path):
+        root_split = re.split(r"/|\\", directory_path)
+        # There is a calls that do not have a full path, but a relative path for import
+        comfy_root_length = len(re.split(r"/|\\", folder_paths.base_path))
+        base_dot_path = ".".join(root_split[comfy_root_length:])
+        return base_dot_path
 
     if not check_report_path(leres_path, "leres_path"):
-        cartoon_seg_folders["leres_path"] = leres_path
+        cartoon_seg_folders["leres_import_path"] = directory_path_to_module_path(leres_path)
+        cartoon_seg_folders["leres_model_path"] = leres_path
 
-
-    cartoon_segmentation_root_split = re.split(r"/|\\", cartoon_segmentation_root)
-    # There is a call in net_tools that does not full path, but a relative path for import
-    comfy_root_length = len(re.split(r"/|\\", folder_paths.base_path))
-    depth_lres_base = ".".join(cartoon_segmentation_root_split[comfy_root_length:])
-
-    cartoon_seg_folders["depth_leres"] = f"{depth_lres_base}.depth_modules.leres"
+    if not check_report_path(depth_modules_path, "depth_modules"):
+        cartoon_seg_folders["depth_modules"] = directory_path_to_module_path(depth_modules_path)
 
 
 add_search_paths()
@@ -69,7 +75,7 @@ class KenBurnsConfigLoader:
     def INPUT_TYPES(cls):
         return {"required": {
             "config_file": (folder_paths.get_filename_list("cartoon_seg_configs"), ),
-            "model": (folder_paths.get_filename_list("cartoon_seg_ckpt"), ),
+            "model": (folder_paths.get_filename_list("cartoon_seg_ckpt"), {"default": "rtmdetl_e60.ckpt"} ),
             "image_path": ("image_path", {"display": "Input Image File Name"}),
             "verbose": (["Yes", "No"], {"display": "Verbose Logging", "default": "No"}),
             },

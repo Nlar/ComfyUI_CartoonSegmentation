@@ -196,22 +196,10 @@ class AnimeInsSeg:
 
         ckpt = torch.load(ckpt, map_location='cpu')
         target_string = ckpt['meta']['cfg'].replace('file_client_args', 'backend_args')
-        # prefix = "custom_nodes.ComfyUI_CartoonSegmentation.CartoonSegmentation"
-        # target_string = target_string.replace("animeinsseg.models.rtmdet_inshead_custom",
-        #                                       f"{prefix}.animeinsseg.models.rtmdet_inshead_custom")
-        # target_string = target_string.replace("animeinsseg.data.metrics",
-        #                                       f"{prefix}.animeinsseg.data.metrics")
-        # target_string = target_string.replace("animeinsseg.data.dataset",
-        #                                       f"{prefix}.animeinsseg.data.dataset")
         target_string = target_string.replace("allow_failed_imports=False", "allow_failed_imports=True")
-        # from custom_nodes.ComfyUI_CartoonSegmentation.CartoonSegmentation.animeinsseg.models import rtmdet_inshead_custom
-        #
-        # from mmengine.utils.dl_utils import collect_env
-        # print(collect_env())
 
         cfg = Config.fromstring(target_string, file_format='.py')
 
-	    # cfg = Config.fromstring(ckpt['meta']['cfg'].replace('file_client_args', 'backend_args'), file_format='.py')
         cfg.visualizer = []
         cfg.vis_backends = {}
         cfg.default_hooks.pop('visualization')

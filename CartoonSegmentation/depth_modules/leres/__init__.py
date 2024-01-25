@@ -34,7 +34,7 @@ def apply_leres(input_image, thr_a: int = 0, thr_b: int = 0, boost: bool = False
     global model, pix2pixmodel
 
     if model is None:
-        leres_path = folder_paths.folder_names_and_paths['cartoon_segmentation']['leres_path']
+        leres_path = folder_paths.folder_names_and_paths['cartoon_segmentation']['leres_model_path']
         model_path = os.path.join(leres_path, "res101.pth")
         old_model_path = os.path.join(old_modeldir, "res101.pth")
         

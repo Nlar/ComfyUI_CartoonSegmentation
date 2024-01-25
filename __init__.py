@@ -11,8 +11,6 @@ from custom_nodes.ComfyUI_CartoonSegmentation.segmentation import KenBurns_Proce
 # from CartoonSegmentation.utils.constants import COLOR_PALETTE
 # from CartoonSegmentation.animeinsseg import AnimeInsSeg, AnimeInstances
 
-print(f"### Loading: ComfyUI_CartoonSegmentation ##")
-
 NODE_CLASS_MAPPINGS = {
     "KenBurns_Processor": KenBurns_Processor,
     "KenBurnsConfigLoader": KenBurnsConfigLoader,
