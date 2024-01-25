@@ -4,7 +4,7 @@ Front end ComfyUI nodes for CartoonSegmentation
 based upon the work of the [CartoonSegmentation](https://github.com/CartoonSegmentation/CartoonSegmentation) repository this project will provide a front end to some of the features.  For notation purposes this project will be referred to as ComfyUI_CartoonSegmentation of briefly as "CfyCS" and the non UI code that provides the power to this project will be referred to as "CartoonSegmentation". 
 
 ## Run Segmentation
-This will create segmentations for an input image.  An example of final anime segmentation result is [workflows and outputs](examples/workflows_and_outputs/ani_seg_standing_rain.png) folder.  The image source used is in the [[examples/source_image/standing_in_rain.png]]
+This will create segmentations for an input image.  An example of final anime segmentation result is [workflows and outputs](examples/workflows_and_outputs/cartoon_segmentation.png) folder.  The image source used is in the [[examples/source_image/standing_in_rain.png]]
 
 ## Run 3d Kenburns
 This will create a short video of a zoom in and out from a single image.  There are two finished output examples show in the [[examples/workflows_and_outputs/]] folder based on the images warrior and warrior_blue in the [example source image](examples/source_image/) folder.  This workflow includes a required image creation at the end of workflow to pass ComfyUI validation.  The image is a screenshot from the half way through the video. 
