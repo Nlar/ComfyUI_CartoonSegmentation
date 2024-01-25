@@ -1,0 +1,8 @@
+Jan 25, 2024
+Changed the Anime Segration node to input the ComfyUI image loader and not the custom one as part of this project.
+Changed the Anime Segration node to output masks (groups and targetted)
+Change the 3d Kenburns Processor so it can terminate a workflow.
+Updated workflows to the new nodes inputs/outputs.
+Jan 24, 2024
+Corrected output folder for 3d Kenburns Processor Node
+3d_pixar.yaml now finds the model

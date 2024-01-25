@@ -1,7 +1,7 @@
 # ComfyUI_CartoonSegmentation
 
 Front end ComfyUI nodes for CartoonSegmentation
-Based upon the work of the [CartoonSegmentation]([https://github.com/CartoonSegmentation/CartoonSegmentation] ) repository this project will provide a front end to some of the features.  For notation purposes this project will be referred to as ComfyUI_CartoonSegmentation of briefly as "CfyCS" and the non UI code that provides the power to this project will be referred to as "CartoonSegmentation". 
+Based upon the work of the [CartoonSegmentation](https://github.com/CartoonSegmentation/CartoonSegmentation) repository this project will provide a front end to some of the features.  For notation purposes this project will be referred to as ComfyUI_CartoonSegmentation of briefly as "CfyCS" and the non UI code that provides the power to this project will be referred to as "CartoonSegmentation". 
 
 ## Run Segmentation
 This will create segmentations for an input image.  An example of final anime segmentation result is [workflows and outputs](examples/workflows_and_outputs/ani_seg_standing_rain.png) folder.  The image source used is in the [[examples/source_image/standing_in_rain.png]]
@@ -35,6 +35,7 @@ Follow the [instructions](https://github.com/CartoonSegmentation/CartoonSegmenta
 cd custom_nodes/ComfyUI_CartoonSegmentation/CartoonSegmentation
 # Follow the instructions from CartoonSegmentation repository
 ```
+**Currently only the rtmdetl_e60.ckpt model is supported.**  
 
 #### res101.pth
 The original hosting provider no longer stores this annotator.  It can be found on [HuggingFace](https://huggingface.co/lllyasviel/Annotators/blob/af19c34529d974eb965a00250f7b743431d56047/res101.pth) and should be placed in the "[comfy_root]/custom_nodes/ComfyUI_CartoonSegmentation/CartoonSegmentation/models/leres" directory.
@@ -43,7 +44,6 @@ cd [comfy_root]/custom_nodes/ComfyUI_CartoonSegmentation/CartoonSegmentation/mod
 mkdir leres
 # Place file in the leres directory 
 ```
-
 
 ### Troubleshooting
 
@@ -65,12 +65,6 @@ ln -s /usr/lib/libgomp.so libgomp-a34b3233.so.1
 
 
 ## Roadmap
-- ~~Produce demo examples in ComfyUI~~
-- ~~Publish Code~~
-	- ~~Add installation instructions as requirements from the  [CartoonSegmentation]([https://github.com/CartoonSegmentation/CartoonSegmentation] ) repository are using conda.~~
-	- ~~Add pip versions to requirements.txt~~
-	- ~~Upload source code~~
-- Correct output folder issue
-- Verify functionality beyond KenBurns Config Loader
-- Fine tune model selection as some models currently crash
-- Output segs for the segmentation in addition to an image
+- ~~Correct output folder issue~~
+- ~~Verify functionality beyond KenBurns Config Loader~~
+- ~~Ouptut masks for the input image during anime segmentation.~~  
